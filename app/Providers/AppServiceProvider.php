@@ -7,6 +7,8 @@ use App\Repositories\UserCrud\UserRepositoryInterface;
 use App\Repositories\UserCrud\UserRepository;
 use App\Repositories\HospitalCrud\HospitalRepositoryInterface;
 use App\Repositories\HospitalCrud\HospitalRepository;
+use App\Repositories\PatientCrud\PatientRepositoryInterface;
+use App\Repositories\PatientCrud\PatientRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(UserRepositoryInterface::class,UserRepository::class);
         $this->app->singleton(HospitalRepositoryInterface::class,HospitalRepository::class);
+        $this->app->singleton(PatientRepositoryInterface::class,PatientRepository::class);
     }
 
     /**

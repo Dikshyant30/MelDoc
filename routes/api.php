@@ -34,3 +34,10 @@ Route::post('createHospital','HospitalController@createHospital');
 Route::get('showHospital/{id}','HospitalController@show');
 Route::put('updateHospital/{id}','HospitalController@updateById');
 Route::delete('destroyHospital/{id}','HospitalController@destroy');
+
+//Patient CRUD
+Route::get('patients','PatientController@getAllPatients');
+Route::post('createPatient','PatientController@createPatient');
+Route::get('showPatient/{id}','PatientController@show');
+Route::put('updatePatient/{id}','PatientController@updateById');
+Route::delete('destroyPatient/{id}','PatientController@destroy');
