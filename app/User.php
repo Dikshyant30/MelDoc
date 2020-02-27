@@ -30,7 +30,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public function hospitals()
+    {
+        return $this->belongsToMany(Hospital::class, 'hospital_user', 'user_id', 'hospital_id');
+    }
     /**
      * The attributes that should be cast to native types.
      *

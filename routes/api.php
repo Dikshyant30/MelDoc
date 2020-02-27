@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+
+//Authentication
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
@@ -41,3 +44,6 @@ Route::post('createPatient','PatientController@createPatient');
 Route::get('showPatient/{id}','PatientController@show');
 Route::put('updatePatient/{id}','PatientController@updateById');
 Route::delete('destroyPatient/{id}','PatientController@destroy');
+
+
+Route::get('usersHosp','HomeController@manyToMany');
