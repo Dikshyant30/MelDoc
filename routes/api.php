@@ -45,5 +45,15 @@ Route::get('showPatient/{id}','PatientController@show');
 Route::put('updatePatient/{id}','PatientController@updateById');
 Route::delete('destroyPatient/{id}','PatientController@destroy');
 
+//Hospital_User Relation
+Route::get('usersHosp/{id}','HomeController@hospitalsByUserId');
+Route::get('hospUsers/{id}','HomeController@usersByHospitalId');
 
-Route::get('usersHosp','HomeController@manyToMany');
+//Hospital_Patient Relation
+Route::get('hospPatient/{id}','HomeController@patientsByHospitalId');
+Route::get('patientHosp/{id}','HomeController@hospitalsByPatientId');
+
+//Hospital_User Relation
+Route::get('usersPatient/{id}','HomeController@patientsByUserId');
+Route::get('patientUsers/{id}','HomeController@usersByPatientId');
+

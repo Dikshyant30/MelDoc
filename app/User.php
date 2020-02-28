@@ -34,6 +34,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Hospital::class, 'hospital_user', 'user_id', 'hospital_id');
     }
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class, 'patient_user', 'user_id', 'patient_id');
+    }
     /**
      * The attributes that should be cast to native types.
      *

@@ -13,5 +13,10 @@ class Hospital extends Model
     {
         return $this->belongsToMany(User::class, 'hospital_user', 'hospital_id', 'user_id');
     }
+
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class, 'hospital_patient', 'hospital_id', 'patient_id');
+    }
  
 }
