@@ -3,46 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Hospital;
-use App\User;
-use App\Patient;
-
 
 class HomeController extends Controller
 {
-    public function hospitalsByUserId($id)
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-    $hospital=User::find($id)->hospitals;
-    return $hospital; 
+        $this->middleware('auth');
     }
 
-    public function usersByHospitalId($id)
-    { 
-       $user=Hospital::find($id)->users;
-       return $user; 
-    }
-
-    public function patientsByHospitalId($id)
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-    $patient=Hospital::find($id)->patients;
-    return $patient; 
-    }
-    
-    public function hospitalsByPatientId($id)
-    { 
-       $hospital=Patient::find($id)->hospitals;
-       return $hospital; 
-    }
-
-    public function patientsByUserId($id)
-    {
-    $patient=User::find($id)->patients;
-    return $patient; 
-    }
-
-    public function usersByPatientId($id)
-    { 
-       $user=Patient::find($id)->users;
-       return $user; 
+        return view('home');
     }
 }
